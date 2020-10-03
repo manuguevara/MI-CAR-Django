@@ -1,0 +1,157 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}
+Inicio
+{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">    
+{% endblock css %}
+
+{% block js %}
+    
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.slider').bxSlider({
+            mode: 'fade',
+            auto:true,
+            pause: 5000
+                });
+
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('.opiniones').bxSlider({
+            mode: 'horizontal',
+            auto: true,
+            pause: 5000,
+            infiniteLoop: true,
+            controls: false
+            });
+
+        });
+    </script>
+
+{% endblock js %}
+{% block contenido %}
+    <br>
+        <div class="slider">
+                <div>
+                    <img src="{% static 'web/img/carrusel/1.jpg' %}" alt="carrusel1">
+                </div>
+                <div>
+                    <img src="{% static 'web/img/carrusel/2.jpg' %}" alt="carrusel2">
+                </div>
+                <div>
+                    <img src="{% static 'web/img/carrusel/3.jpg' %}" alt="carrusel3">
+                </div>
+                <div>
+                    <img src="{% static 'web/img/carrusel/4.jpg' %}" alt="carrusel4">
+                </div>
+                <div>
+                    <img src="{% static 'web/img/carrusel/5.jpg' %}" alt="carrusel5">
+                </div>
+                <div>
+                    <img src="{% static 'web/img/carrusel/6.jpg' %}" alt="carrusel6">
+                </div>
+        </div>
+        <br>
+        <div class="servicios">
+            <div>
+                <div>
+                    <img class="img-servicio" src="{% static 'web/img/servicios/lavado-exterior.jpg' %}" alt="lavado-exterior">
+                </div>
+                <div class="texto">
+                    <h1 class="titulo-servicio">Lavado exterior</h1>
+                    <p>- Lavado de carrocería manual.</p>
+                    <p>- Limpieza de vidrios y espejos exterior.</p>
+                    <p>- Limpieza de plásticos exteriores.</p>
+                    <p>- Renovador de gomas en neumáticos.</p>
+                </div>
+            </div>
+            <br>
+            <div class="texto-izquierda">
+                <div class="texto">
+                    <h1 class="titulo-servicio">Lavado interno</h1>
+                    <p>- Aspirado Interior de auto.</p>
+                    <p>- Aspirado de maleta de auto.</p>
+                    <p>- Limpieza de tablero y plásticos.</p>
+                    <p>- Limpieza interior de vidrios y espejos.</p>
+                </div>
+                <div>
+                    <img class="img-servicio" src="{% static 'web/img/servicios/lavado-interno.jpg' %}" alt="lavado-interno">
+                </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <img class="img-servicio" src="{% static 'web/img/servicios/pulido.jpg' %}" alt="pulido">
+                </div>
+                <div class="texto">
+                    <h1 class="titulo-servicio">Pulido completo</h1>
+                    <p>- Encerado de carrocería con cera líquida.</p>
+                    <p>- Da mayor vida útil y protección a la carrocería.</p>
+                    <p>- Elimina suciedad de las llantas.</p>
+                    <p>- Elimina la opacidad que con el tiempo aparece en los focos.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="opiniones">
+            <div>
+                <br>
+                <h3>Por Mauricio Ivan</h3>
+                <br>
+                <p class="estrella"> ★★★★★ </p>
+                <br>
+                <p>Excelente servicio, todo muy rapido y bien hecho. 100% recomendado!!!!</p>
+                <br>
+            </div>
+            <div>
+                <br>
+                <h3>Por Claudio</h3>
+                <br>
+                <p class="estrella"> ★★★★★ </p>
+                <br>
+                <p>Mi auto estaba hecho un asco, pero con este servicio de lavado quedo impeque. Si hasta parece nuevo :) .</p>
+                <br>
+            </div>
+            <div>
+                <br>
+                <h3>Por Carlos</h3>
+                <br>
+                <p class="estrella"> ★★★★ </p>
+                <br>
+                <p>Es bueno,rapido y economico.</p>
+                <br>
+            </div>
+            <div>
+                <br>
+                <h3>Por Valentina</h3>
+                <br>
+                <p class="estrella"> ★★★★★ </p>
+                <br>
+                <p>Me encanto!!! Mi auto quedo con olor a flores.</p>
+                <br>
+            </div>
+            <div>
+                <br>
+                <h3>Por Juan</h3>
+                <br>
+                <p class="estrella"> ★★★★★ </p>
+                <br>
+                <p>Los trabajadores muy amables, el espacio amplio y muy seguro.</p>
+                <br>
+            </div>
+            <div>
+                <br>
+                <h3>Por Leonardo</h3>
+                <br>
+                <p class="estrella"> ★★★★★ </p>
+                <br>
+                <p>Lo mejor en autolavados!!! Lo recomiendo una y mil veces.</p>
+                <br>
+            </div>
+    </div>
+{% endblock contenido %}

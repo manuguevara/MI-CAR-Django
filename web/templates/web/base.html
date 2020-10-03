@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title marquee >MI CAR - {% block title %}{% endblock %}</title>
+    {% block css %}
+    
+    {% endblock css %}
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'web/css/estilos.css' %}">
+</head>
+<body>
+    <header id="header">
+        <img class="menu" src="{% static 'web/img/menuiconwhite' %}.png" alt="menu" id="menu" >
+        <div class="contenedor_logo">
+            <img src="{% static 'web/img/001-24-hours.' %}png" alt="logo" class="logo">
+            <h1>MI CAR</h1>
+        </div>
+        <div>
+            <nav id="nav">
+                <ul class="feriado">
+                    <li>
+                        <a  id="nombreFeriado"></a>
+                    </li>
+                    <li>
+                        <a  id="fechaFeriado"></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'galeria' %}">Galeria</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'insumos' %}">Insumos</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'misionvision' %}">Misión y visión</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'registro' %}">Regístrate</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ubicacion' %}">Ubicación y contacto</a>
+                    </li>
+                    <br>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+   <div id="contenido">
+        {% block contenido %}
+        
+        {% endblock  %}
+    </div>
+
+    <footer>
+        <div class="logos">
+            <div>
+                <h2>MI CAR</h2>
+            </div>
+            <div>
+                <img src="{% static 'web/img/049-sedan.png' %}" alt="logo">
+            </div>    
+        </div>
+        <div class="enlaces">
+            <div class="contenedor_enlaces">
+                <a class="titulo" >Mapa del sitio</a>
+                <a class="enlace" href="{% url 'home' %}">Inicio</a>
+                <a class="enlace" href="{% url 'galeria' %}">Galeria</a>
+                <a class="enlace" href="{% url 'insumos' %}">Insumos</a>
+                <a class="enlace" href="{% url 'misionvision' %}">Misión y visión</a>
+                <a class="enlace" href="{% url 'registro' %}">Regístrate</a>
+                <a class="enlace" href="{% url 'ubicacion' %}">Ubicación y contacto</a>
+            </div>
+            
+        </div>
+        
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    {% block js %}
+    
+    {% endblock js %}
+
+    <script src="{% static 'web/js/menu.js' %}"></script>
+    <script src="{% static 'web/js/feriados.js' %}"></script>
+
+</body>
+</html>

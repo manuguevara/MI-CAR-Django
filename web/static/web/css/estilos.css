@@ -1,0 +1,461 @@
+/*Quitar borde*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+label.error{
+    color: darkred;
+}
+body{
+    background-color: #40a8c4;
+    overflow-x: hidden;
+}
+/*Cabecera de pagina*/
+header{
+    height: 120px;
+    background-color: #a2d5f2;
+    display: flex;
+    transition: all 0.3s;
+}
+
+header > div{
+    width:70%;
+}
+
+.logo{
+    width: 100px;
+    padding-top: 10px; 
+    padding-left: 10px;   
+}
+
+.contenedor_logo{
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.contenedor_logo > h1{
+    color: white;
+    font:215%;
+    }
+
+header> div> nav{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: flex-end;
+
+}
+.feriado {
+    background-color: #96c2dd;
+    border-radius: 5px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.feriado > li{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+nav {
+    flex-direction: column;
+}
+
+nav > ul{
+    margin-right: 50px;
+    margin-top: 30px;
+    height: 100%;
+}
+nav>ul>li{
+    display: inline;
+    margin-left: 10px;
+    align-items: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.galeria{
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    
+}
+
+.galeria img{
+    width: 100%;
+    height: 220px;
+    color: white;
+    border: dashed;
+    border-radius: 20px;
+}
+
+ /*Contenido Principal*/
+#contenido{
+    width: 80%;
+    max-width: 1280px;
+    min-height: 80vh;
+    height: auto;
+    margin: auto;
+}
+
+.servicios div{
+    background-color: #a2d5f2;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+}
+
+.servicios > div > div{
+    width: 70%;
+}
+.titulo-servicio{
+    color: black;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    
+}
+.texto{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    line-height: 30pt;
+    padding-left: 50px;
+    padding-right: 10px;
+    width: 100%;
+    }
+
+.img-servicio{
+    margin: 30px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.opiniones {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    
+}
+
+.estrella{
+    color: orange;
+    font-size: 30px;
+}
+/*Contenido ubicacion*/
+
+#contenido iframe{
+    width: 100%;
+}
+.ubicacion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-ubicacion{
+    background-color: #a2d5f2;
+    border: dashed;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/*Contenido formularios*/
+.formulario_insumo{
+    color: white;
+}
+
+.formulario_registro{
+    color: white;
+}
+.button{
+    padding: 5px 10px;
+    margin-left: 5px;
+    color: white;
+    background-color: #2d3748;
+    border-radius: 5px;
+}
+.form_labels {
+    background-color: #a2d5f2;
+    border-radius: 20px;
+    border:dotted;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    width: 50%;
+}
+.form_labels > ul > li{
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.form_labels > ul > li > input{
+    width: 100%;
+}
+.form_labels > ul > li > textarea{
+    width: 100%;
+}
+
+.formulario_registro div{
+  display: inline-block; 
+}
+
+/*Contenido Mision y Vision*/
+
+
+.img-mv{
+    display: flex;
+    justify-content: center;  
+    margin: 20px; 
+}
+.intro{
+    color: white;
+    background-color: #a2d5f2;
+    width: auto;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    text-justify: distribute;
+    }
+.misionvision{
+    background-color: #a2d5f2;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.mision {
+    color: white;
+    background-color: #85caf1;
+    margin: 30px;
+    margin-right: 5px;
+    border-radius: 20px 0px 0px 20px;
+    padding: 10px;
+    padding-right: 0px;
+
+}
+.vision{
+    color: white;
+    background-color:#4a7791;
+    margin: 30px;
+    margin-left: 5px;
+    border-radius: 0px 20px 20px 0px;
+    padding: 10px;
+
+}
+/*FOOTER*/
+
+footer{
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: auto;
+    height: 300px;
+    background-color: #2d3748;
+}
+
+footer> div > a{
+    color: white;
+    text-decoration: none;
+    }
+
+footer > div {
+    display: flex;
+    width: 50%;
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+.logos{
+    display: flex;
+    color: whitesmoke;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer > .logos > div > img{
+    width: 80px;    
+    }
+.enlaces{
+    justify-content: flex-start;
+}
+.enlaces  > div > a{
+    display: flex;
+    justify-content: left;
+    line-height: 40px;
+}
+.enlace{
+    color: white;
+    text-decoration: none;
+}
+.titulo{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu{
+    width: 40px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: none;
+}
+
+/*FIN FOOTER*/
+
+/*MEDIA QUERIES*/
+
+/*TABLETS*/
+
+@media (max-width:1024px){
+    nav > .feriado{
+        display: flex;
+        flex-direction: column;
+    }
+    .galeria{
+        grid-template-columns: 1fr 1fr;
+    }
+    .servicios div{
+        flex-direction:  column;
+        align-items: center;
+    }
+    .servicios img{
+        width: 100%;
+    }
+    .img-mv img{
+        width: 100%;
+    }
+    .intro{
+        margin: auto;
+        margin-top: 20px;
+    }
+    .texto{
+        padding: 0;
+    }
+    .servicios div.texto-izquierda{
+        flex-direction:  column-reverse;
+        align-items: center;
+    }
+    .form_labels{
+        width: 100%;
+    }
+}
+
+@media (max-width:570px){
+
+    body{
+        overflow-x: hidden;
+    }
+    .galeria{
+        grid-template-columns: 1fr ;
+    }
+    
+    .menu{
+        display: block;
+    }
+    .servicios img{
+        width: 100%;
+    }
+    .servicios div .texto{
+        align-items: unset;
+    }
+
+    .servicios div .texto-izquierda{
+        align-items: unset;
+    }
+    .misionvision{
+        flex-direction: column;
+        width: auto;
+    }
+    .mision{
+        border-radius: 20px;
+        margin: 20px;
+        margin-bottom: 10px;
+    }
+    .vision{
+        border-radius: 20px;
+        margin: 20px;
+        margin-top: 10px;
+    }
+    @keyframes animacion_servicio_smartphone{/*animacion para servicios*/
+        0%{
+            transform: scale(0.1);
+        }
+        80%{
+            transform: scale(1.1);
+        }
+
+        100%{
+            transform: scale(1);
+        }
+    }
+    header{
+        flex-direction: column;
+        height: 110px;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+    }
+
+
+    header > div {
+        width: 100%;
+    }
+    .contenedor_logo{
+        justify-content: center;
+        width: 100%;
+    }
+
+    header > div > nav{
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav > ul{
+        margin: 0;
+    }
+
+    .form_labels{
+        width: auto;
+    }
+    #formulario_registro .form_labels{
+        width: 90%;
+    }
+
+    .feriado > li{
+        background-color: #96c2dd;
+        border-radius: 5px;
+        padding: 0px;
+        margin: 0;
+    }
+    nav > ul > li {
+        display: block;
+        margin: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    footer{
+        height: 420px;
+    }
+
+    .logos{
+        justify-content: center;
+        width: 100%;
+    }
+    .enlaces{
+        padding-top: 30px;
+        padding-left: 20px;        
+    }
+}

@@ -1,0 +1,38 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}
+Misión y Visión
+{% endblock title %}
+{% block contenido %}
+
+    <div class="intro">
+            <div>
+                MI CAR, apunta a la necesidad del mercado por contar con un servicio de lavado automotriz con alta experiencia, calidad en el servicio, utilización de productos de alta gama y con servicios de estacionamientos.
+            </div>
+            <br>
+            <div>
+                Hoy MI CAR, cumple con el mejor servicio del mercado, siendo actualmente la mejor alternativa de toda la comuna, desarrollando planes y proyectos de expansión y de desarrollo a través de diversos convenios comerciales y corporativos.
+            </div>
+        </div>
+        <div class="img-mv">
+            <img src="{% static 'web/img/misionvision/autolavado.jpg' %}" alt="autolavado">
+        </div>
+        <div class="misionvision">  
+            <div class="mision">
+                <div class="titulo">Misión</div>
+                <br>
+                <div>
+                    Convertirnos en la principal empresa de lavado de autos de la comuna. Obtener el reconocimiento de todos nuestros clientes. Aportar innovación, rapidez en la atención, así como ser un ejemplo de excelencia de servicio y rentabilidad.
+                </div>
+            </div>
+            <div class="vision">
+                
+                <div class="titulo">Visión</div>
+                <br>
+                <div>
+                    Superar las expectativas de nuestros clientes brindando fuertes estándares de servicio, calidad en los detalles y productos de alta calidad aportando un desarrollo profesional en el actual mercado de lavado automotriz.
+                </div>
+            </div>
+        </div>
+
+{% endblock contenido %}

@@ -1,0 +1,45 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}
+Insumos
+{% endblock title %}
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="{% static 'web/js/formularios.js' %}"></script>
+    <script src="{% static 'web/js/traducciones.js' %}"></script>
+{% endblock js %}
+
+{% block contenido %}
+
+    <br>
+        <h1 class="titulo">Ingreso de insumos</h1>
+        <br>
+        <form action="" id="formulario_insumo" class="formulario_insumo">
+            <div class="form_labels">
+                <ul>
+                    <li>
+                        <label for="nombre">Nombre:</label>
+                        <br>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre">
+                    </li>
+                    <li>
+                        <label for="precio">Precio:</label>
+                        <br>
+                        <input type="number" name="precio" id="precio" placeholder="Ingrese el precio">
+                    </li>
+                    <li>
+                        <label for="descripcion">Descripción:</label>  
+                        <br>
+                        <textarea name="descripcion" id="descripcion" cols="50" rows="10" placeholder="Ingrese una descripción"></textarea>
+                    </li>
+                </ul>
+            </div>
+            
+            <br>
+            <br>
+            <button type="button" id="btnEnviar" class="button">Enviar</button>
+        </form>
+
+{% endblock contenido %}
