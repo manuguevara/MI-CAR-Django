@@ -3,22 +3,19 @@
 {% block title %}
 Galeria
 {% endblock title %}
+{% block css %}
+{% include "fancybox/fancybox_css.html" %}
+{% endblock css %}
 {% block js %}
-
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
+{% include "fancybox/fancybox_js.html" %}
 {% endblock js %}
-
 {% block contenido %}
     <br>
         <H2 class="titulo">Galería de autolavado MI CAR</H2>
         <br><br>
         <div class="galeria">
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/2.jpg' %}"><img src="{% static 'web/img/galeria/2.jpg' %}"></a>
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/1.jpeg' %}"><img src="{% static 'web/img/galeria/1.jpeg' %}"></a>
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/3.jpg' %}"><img src="{% static 'web/img/galeria/3.jpg' %}"></a>
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/4.jpeg' %}"><img src="{% static 'web/img/galeria/4.jpeg' %}"></a>
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/5.jpg' %}"><img src="{% static 'web/img/galeria/5.jpg' %}"></a>
-            <a data-fancybox="gallery" href="{% static 'web/img/galeria/6.jpeg' %}"><img src="{% static 'web/img/galeria/6.jpeg' %}"></a>
+        {% for g in galeria %}
+            <a data-fancybox="gallery" href="{{ g.imagen.url }}"><img src="{{ g.imagen.url }}"></a>
+        {% endfor%}
         </div>
 {% endblock contenido %}}

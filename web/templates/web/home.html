@@ -37,24 +37,11 @@ Inicio
 {% block contenido %}
     <br>
         <div class="slider">
+            {% for s in sliders %}
                 <div>
-                    <img src="{% static 'web/img/carrusel/1.jpg' %}" alt="carrusel1">
+                    <img src="{{ s.imagen.url }}" alt="slider">
                 </div>
-                <div>
-                    <img src="{% static 'web/img/carrusel/2.jpg' %}" alt="carrusel2">
-                </div>
-                <div>
-                    <img src="{% static 'web/img/carrusel/3.jpg' %}" alt="carrusel3">
-                </div>
-                <div>
-                    <img src="{% static 'web/img/carrusel/4.jpg' %}" alt="carrusel4">
-                </div>
-                <div>
-                    <img src="{% static 'web/img/carrusel/5.jpg' %}" alt="carrusel5">
-                </div>
-                <div>
-                    <img src="{% static 'web/img/carrusel/6.jpg' %}" alt="carrusel6">
-                </div>
+            {% endfor %}
         </div>
         <br>
         <div class="servicios">

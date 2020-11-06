@@ -1,0 +1,5 @@
+django
+pillow
+django-fancybox
+django-admin-interface
+django-crispy-forms

@@ -1,0 +1,82 @@
+{% extends 'web/base.html' %}
+
+{% block js %}
+    <script>
+        function eliminarInsumo(id) {
+            console.log(id)
+            Swal.fire({
+                "title":"¿Estas seguro?",
+                "text":"Esta acción no se puede deshacer",
+                "icon" : "question",
+                "showCancelButton":true,
+                "cancelButtonText":"No, Cancelar",
+                "confirmButtonText":"Si, Eliminar",
+                "confirmButtonColor":"#dc3545"
+            })
+            .then(function(result){
+                if(result.isConfirmed) {
+                    window.location.href = "/eliminar-insumo/"+id+"/"
+                }
+            })
+        }
+    </script>
+{% endblock js %}
+
+{% block title %}
+Listar Insumos
+{% endblock title %}
+{% block contenido %}
+{% load humanize %}
+<br><br>
+<div class="card">
+    <div class="card body">
+    <ul class="lista_insumos">
+        <li>
+            <h2>Listado de insumos</h2>
+        </li>
+        <li>
+            {% if perms.web.add_insumo %}
+            <a class="btn btn-secondary" href="{% url 'agregar_insumo' %}">Nuevo insumo</a>
+            {% endif %}
+        </li>
+    </ul>
+    <hr>
+    <table class="table table-striped table-hover table-responsive-sm">
+    <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        {% if perms.web.change_insumo or perms.web.delete_insumo %}
+            <th>Opciones</th> 
+        {% endif %}
+    </tr>
+
+    {% for i in entity %}
+
+    <tr>
+        <td>{{ i.nombre | title }}</td>
+        <td>${{ i.precio | intcomma }}</td>
+        <td>{{ i.stock | title }}</td>
+        {% if perms.web.change_insumo or perms.web.delete_insumo %}
+        <td>
+            {% if perms.web.change_insumo %}
+                <a href="{% url 'modificar_insumo' i.id %}" class="btn btn-info btn-sm">Modificar</a>
+            {% endif %}
+
+            {% if perms.web.delete_insumo %}
+                <a href="#" onclick="eliminarInsumo({{ i.id }})" class="btn btn-danger btn-sm">Eliminar</a>
+            {% endif %}
+        </td>
+        {% endif %}
+    </tr>
+
+    {% endfor %}
+    </table>
+    <hr>
+    <div>
+        {% include 'web/paginator.html' %}
+    </div>
+    </div>
+</div>
+
+{% endblock contenido %}
