@@ -94,7 +94,7 @@
                 <a class="enlace" href="{% url 'home' %}">Inicio</a>
                 <a class="enlace" href="{% url 'galeria' %}">Galeria</a>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'listar_insumos' %}">Insumos</a>
+                    <a class="enlace" href="{% url 'listar_insumos' %}">Insumos</a>
                 {% endif %}
                 <a class="enlace" href="{% url 'misionvision' %}">Misión y visión</a>
                 <a class="enlace" href="{% url 'registro' %}">Regístrate</a>

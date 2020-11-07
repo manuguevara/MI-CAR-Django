@@ -3,7 +3,7 @@ from .models import Insumo
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ValidationError
-from .validators import OnlyLetters,UniqueUpperLower
+from .validators import OnlyLetters
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -23,8 +23,9 @@ class CustomUserCreationForm(UserCreationForm):
     pass
 
 class InsumoForm(forms.ModelForm):
-    nombre=forms.CharField(validators=[UniqueUpperLower()])
+    nombre = forms.CharField()
     imagen = forms.ImageField(required=False)
+    descripcion = forms.CharField(required=False, min_length=3,max_length=200,widget=forms.Textarea)
     class Meta:
         model = Insumo
         fields = '__all__'
