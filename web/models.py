@@ -26,7 +26,7 @@ class MisionVision(models.Model):
         return "Misión y Visión"
 
 class Insumo(models.Model):
-    nombre = models.CharField(validators=[MinLengthValidator(3)],max_length=120)
+    nombre = models.CharField(validators=[MinLengthValidator(3)],max_length=120, unique=True)
     precio = models.IntegerField(validators=[MinValueValidator(1)])
     imagen = models.ImageField(upload_to="Insumo", null=True)
     descripcion = models.TextField(validators=[MinLengthValidator(3)],max_length=200,null=True)
