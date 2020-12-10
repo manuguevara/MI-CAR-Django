@@ -25,13 +25,19 @@ SECRET_KEY = 'l$!g&^96dx_7m*q(j6%i18mdtkqg&4bui_-c5ut*8i$o056^sp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost","127.0.0.1"]
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 # Application definition
+
+SOCIAL_AUTH_FACEBOOK_KEY = "1340130702997967"
+SOCIAL_AUTH_FACEBOOK_SECRET = "164e8052d45184841c5a3df54f8f9d7a"
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+LOGIN_ERROR_URL = '/error-facebook/'
 
 INSTALLED_APPS = [
     'admin_interface',
@@ -45,7 +51,11 @@ INSTALLED_APPS = [
     'web',
     'fancybox',
     'crispy_forms',
-    'django.contrib.humanize'
+    'django.contrib.humanize',
+    'rest_framework',
+    'social_django',
+    'pwa',
+    'fcm_django',
     ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -59,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'micar.urls'
@@ -74,9 +85,25 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends', 
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
+]
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] 
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {  
+  'fields': 'id, name, email, picture.type(large), link'
+}
+
+
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [               
+    ('name', 'name'),
+    ('email', 'email'),
+    ('picture', 'picture'),
+    ('link', 'profile_url'),
 ]
 
 WSGI_APPLICATION = 'micar.wsgi.application'
@@ -136,3 +163,43 @@ import os
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+PWA_APP_NAME = "Mi Car"
+PWA_APP_DESCRIPTION = "Lavado de autos"
+PWA_APP_THEME_COLOR = "#40a8c4"
+PWA_APP_BACKGROUND_COLOR = "#2d3748"
+
+PWA_APP_ICONS = [
+    {
+        "src" : "/static/web/img/001-24-hours.png",
+        "sizes" : "160x160"
+    }
+]
+
+PWA_APP_ICONS_APPLE = [
+    {
+        "src" : "/static/web/img/001-24-hours.png",
+        "sizes" : "160x160"
+    }
+]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, "serviceworker.js")
+
+FCM_DJANGO_SETTINGS = {
+         # default: _('FCM Django')
+        "APP_VERBOSE_NAME": "mi car",
+         # Your firebase API KEY
+        "FCM_SERVER_KEY": "AAAApIoDuPc:APA91bFu6_GLcIV3kjh3Vj5Y-X5gnaxjgODA_kaM_XdhCdYdS-XzQJfK_MZJo13Fhp8FioGjBFEbm_PaE1PtUdCEjycaMcde95ybNweeL-kgmmKYik9GdBADMgN_QmajtGGBwNmpWTir",
+         # true if you want to have only one active device per registered user at a time
+         # default: False
+        "ONE_DEVICE_PER_USER": True,
+         # devices to which notifications cannot be sent,
+         # are deleted upon receiving error response from FCM
+         # default: False
+        "DELETE_INACTIVE_DEVICES": True,
+}

@@ -35,3 +35,19 @@ class Insumo(models.Model):
     def __str__(self):
         return self.nombre 
 
+opciones_consulta = [
+    [0, "Solicitud"],
+    [1, "Reclamo"],
+    [2, "Sugerencia"]
+]
+
+class Contacto(models.Model):
+    nombre = models.CharField(validators=[MinLengthValidator(3)],max_length=50)
+    apellido = models.CharField(validators=[MinLengthValidator(3)],max_length=50)
+    asunto = models.CharField(validators=[MinLengthValidator(8)],max_length=50)
+    tipo_consulta = models.IntegerField(choices=opciones_consulta)
+    mensaje = models.TextField(validators=[MinLengthValidator(10)],max_length=200)
+    def __str__(self):
+        return self.nombre
+    
+    

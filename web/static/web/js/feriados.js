@@ -1,6 +1,6 @@
 
 
-let url = "https://api.control-z.cl/api/feriados"
+let url = "https://apis.digital.gob.cl/fl/feriados"
 let fechaActual = new Date()
 
 //Se llama a la url de feriados

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Slider, Galeria, MisionVision, Insumo
+from .models import Slider, Galeria, MisionVision, Insumo, Contacto
 
 # Register your models here.
 class ImagenAdmin(admin.ModelAdmin):
@@ -21,6 +21,7 @@ admin.site.register(Slider, ImagenAdmin)
 admin.site.register(Galeria, ImagenAdmin)
 admin.site.register(MisionVision, MisionVisionAdmin)
 admin.site.register(Insumo)
+admin.site.register(Contacto)
 
 
 #Modificacion de titulos sitio administracion

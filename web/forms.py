@@ -1,5 +1,5 @@
 from django import forms
-from .models import Insumo
+from .models import Insumo,Contacto
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import ValidationError
@@ -32,3 +32,8 @@ class InsumoForm(forms.ModelForm):
         labels = {
             'descripcion' : 'Descripción'
         }
+
+class ContactoForm(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = '__all__'
